@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "886314006460",
+    "project_id": "retrohardware-8a198",
+    "storage_bucket": "retrohardware-8a198.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:886314006460:android:ff983cf9649146c0f59db9",
+        "android_client_info": {
+          "package_name": "com.example.retrohardware"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4XdqJD-eZ-Fk3goP8osD_4OY3P-Y7yaA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
