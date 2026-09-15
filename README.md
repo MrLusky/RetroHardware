@@ -47,40 +47,6 @@ O aplicativo possui as seguintes funcionalidades:
 
 ---
 
-## 🧩 Wireframes
-
-Antes do desenvolvimento da interface, foram planejadas as principais telas do aplicativo por meio de wireframes.
-
-Os wireframes foram utilizados para definir a organização dos elementos da interface, o fluxo de navegação e a disposição das informações antes da implementação em Jetpack Compose.
-
-### Tela de Login
-
-Tela responsável por permitir que usuários cadastrados acessem o aplicativo utilizando e-mail e senha.
-
-![Wireframe da tela de Login](images/wireframe-login.png)
-
-### Tela de Cadastro
-
-Tela utilizada para a criação de uma nova conta de acesso ao aplicativo.
-
-![Wireframe da tela de Cadastro](images/wireframe-cadastro.png)
-
-### Catálogo
-
-Tela principal do aplicativo, responsável por apresentar os itens históricos em formato de cards.
-
-![Wireframe da tela de Catálogo](images/wireframe-home.png)
-
-### Tela de Detalhes
-
-Tela apresentada quando o usuário seleciona um dos itens do catálogo, exibindo informações mais completas sobre a tecnologia escolhida.
-
-![Wireframe da tela de Detalhes](images/wireframe-detalhes.png)
-
-> **Observação:** Os wireframes representam o planejamento inicial da interface. A versão implementada no aplicativo recebeu uma identidade visual própria baseada no conceito de hardware e computação retrô.
-
----
-
 ## 🗄️ Banco de dados e Backend
 
 O aplicativo utiliza o **Firebase** como infraestrutura de backend.
