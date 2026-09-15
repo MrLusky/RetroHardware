@@ -9,17 +9,12 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowForward
-import androidx.compose.material.icons.filled.Computer
-import androidx.compose.material.icons.filled.Memory
-import androidx.compose.material.icons.filled.SettingsInputComponent
-import androidx.compose.material.icons.filled.Storage
 import androidx.compose.material3.AssistChip
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
@@ -39,6 +34,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.retrohardware.data.FirebaseRepository
 import com.example.retrohardware.data.HardwareItem
+import androidx.compose.foundation.Image
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
+import com.example.retrohardware.R
 
 @Composable
 fun HomeScreen(
@@ -175,22 +174,12 @@ fun HardwareCard(
     onClick: () -> Unit
 ) {
 
-    val icon = when (item.id) {
-
-        "valvulas" ->
-            Icons.Default.SettingsInputComponent
-
-        "cartoes_perfurados" ->
-            Icons.Default.Storage
-
-        "eniac" ->
-            Icons.Default.Computer
-
-        "primeiro_microchip" ->
-            Icons.Default.Memory
-
-        else ->
-            Icons.Default.Memory
+    val image = when (item.id) {
+        "valvulas" -> R.drawable.valvulas
+        "cartoes_perfurados" -> R.drawable.cartoes_perfurados
+        "eniac" -> R.drawable.eniac
+        "primeiro_microchip" -> R.drawable.primeiro_microchip
+        else -> R.drawable.primeiro_microchip
     }
 
     Card(
@@ -209,41 +198,33 @@ fun HardwareCard(
             modifier = Modifier.padding(20.dp)
         ) {
 
-            // TÍTULO E ÍCONE
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically
+            Image(
+                painter = painterResource(id = image),
+                contentDescription = item.nome,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(180.dp),
+                contentScale = ContentScale.Crop
+            )
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            Column(
+                modifier = Modifier.fillMaxWidth()
             ) {
 
-                Icon(
-                    imageVector = icon,
-                    contentDescription = null,
-                    modifier = Modifier.size(42.dp)
+                Text(
+                    text = item.nome,
+                    style = MaterialTheme.typography.titleLarge,
+                    fontWeight = FontWeight.Bold
                 )
 
-                Spacer(
-                    modifier = Modifier.width(16.dp)
+                Spacer(modifier = Modifier.height(4.dp))
+
+                Text(
+                    text = item.ano,
+                    style = MaterialTheme.typography.bodyMedium
                 )
-
-                Column(
-                    modifier = Modifier.weight(1f)
-                ) {
-
-                    Text(
-                        text = item.nome,
-                        style = MaterialTheme.typography.titleLarge,
-                        fontWeight = FontWeight.Bold
-                    )
-
-                    Spacer(
-                        modifier = Modifier.height(4.dp)
-                    )
-
-                    Text(
-                        text = item.ano,
-                        style = MaterialTheme.typography.bodyMedium
-                    )
-                }
             }
 
             Spacer(
